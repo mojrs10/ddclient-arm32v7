@@ -13,14 +13,10 @@ chmod 755 root/etc/s6-overlay/s6-rc.d/svc-inotify/run
 chmod 755 root/etc/s6-overlay/s6-rc.d/svc-ddclient/run
 chmod 755 root/etc/s6-overlay/s6-rc.d/init-ddclient-config/run
 
-./root/etc/s6-overlay/s6-rc.d/svc-inotify/run
-./root/etc/s6-overlay/s6-rc.d/svc-ddclient/run
-./root/etc/s6-overlay/s6-rc.d/svc-ddclient/run
-
 # git add root/donate.txt
-git add root/etc/s6-overlay/s6-rc.d/init-radarr-config/run
-git add root/etc/s6-overlay/s6-rc.d/svc-radarr/run
-git add root/etc/s6-overlay/s6-rc.d/svc-radarr/data/check
+git add root/etc/s6-overlay/s6-rc.d/svc-inotify/run
+git add root/etc/s6-overlay/s6-rc.d/svc-ddclient/run
+git add root/etc/s6-overlay/s6-rc.d/init-ddclient-config/run
 
 # Provjeri je li bilo promjena
 if ! git diff-index --quiet HEAD --; then
