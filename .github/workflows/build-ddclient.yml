@@ -1,8 +1,8 @@
 permissions:
-  contents: write
-  pull-requests: write
-  issues: write
-  discussions: write
+  contents: write   # Omogućava GitHub Actions-u pisanje u repozitorij (commit, push)
+  pull-requests: write  # Omogućava GitHub Actions-u upravljanje pull zahtjevima
+  issues: write  # Omogućava GitHub Actions-u upravljanje problemima
+  discussions: write  # Omogućava GitHub Actions-u upravljanje diskusijama
 
 name: Auto Build ddclient
 
@@ -29,6 +29,11 @@ jobs:
         run: |
           bash ./fix-permissions.sh
 
+      # Instalacija nedostajućih alata
+      - name: Install missing utilities
+        run: |
+          apk update && apk add --no-cache util-linux
+
       # Preuzimanje najnovije verzije ddclient-a s GitHub API-ja
       - name: Get latest ddclient version from GitHub
         id: get_version
@@ -46,7 +51,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
-          version: v0.10.0
+          version: v0.10.0  # Pin na određenu verziju Buildx-a radi stabilnosti
 
       # Login na Docker Hub
       - name: Login to Docker Hub
