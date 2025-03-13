@@ -29,11 +29,6 @@ jobs:
         run: |
           bash ./fix-permissions.sh
 
-      # Instalacija nedostajućih alata
-      - name: Install missing utilities
-        run: |
-          sudo apt-get update && sudo apt-get install -y util-linux
-
       # Preuzimanje najnovije verzije ddclient-a s GitHub API-ja
       - name: Get latest ddclient version from GitHub
         id: get_version
