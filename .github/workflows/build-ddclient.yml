@@ -32,7 +32,7 @@ jobs:
       # Instalacija nedostajućih alata
       - name: Install missing utilities
         run: |
-          apk update && apk add --no-cache util-linux
+          sudo apt-get update && sudo apt-get install -y util-linux
 
       # Preuzimanje najnovije verzije ddclient-a s GitHub API-ja
       - name: Get latest ddclient version from GitHub
