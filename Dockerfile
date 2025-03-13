@@ -2,9 +2,9 @@
 
 # FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-3.17
 # FROM mojrapid/alpine:3.18_s6_transmission-arm32v7
-# FROM mojrapid/baseimage:alpine-3.18_s6_full
+FROM mojrapid/baseimage:alpine-3.18_s6_full
 # FROM mojrapid/baseimage:alpine-3.19_s6_full - ovaj se inače koristi u orginalu
-FROM mojrapid/baseimage:alpine-3.20_s6_full
+# FROM mojrapid/baseimage:alpine-3.20_s6_full
 
 # set version label
 ARG BUILD_DATE
