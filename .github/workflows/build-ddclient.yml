@@ -46,7 +46,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
-          version: v0.10.0  # Pin na određenu verziju Buildx-a radi stabilnosti
+          version: v0.14.0  # Pin na određenu verziju Buildx-a radi stabilnosti
 
       # Login na Docker Hub
       - name: Login to Docker Hub
